@@ -48,13 +48,13 @@ class myClient(discord.Client):
                     with open("knockjokes.txt", "r", encoding="utf8") as f:
                         knock_joke_list = f.readlines()
                     joke = random.choice(knock_joke_list).split("*") 
-                    who = joke[0] #the who is the first element of the list
+                    who = joke[0]
                     await ctx.channel.send(who)
 
 
                     answer = await client.wait_for('message', check=lambda message: ctx.author == message.author)
                     if answer.content.lower() == (f"{who} who?".lower()):
-                        await ctx.channel.send(joke[1]) #sending second element in joke sublist
+                        await ctx.channel.send(joke[1]) 
                     
                     
 
