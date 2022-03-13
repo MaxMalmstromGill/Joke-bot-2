@@ -7,18 +7,10 @@ import random
 client = discord.Client()
 
 
- 
-
-
-
-
 class myClient(discord.Client):
     async def on_ready(self):
+   #så man vet att den är inloggad
         print(f'Logged in as {client.user}'.format(client))
-
-   
-    
-
         
     async def on_message(self, ctx):
             if ctx.author == client.user:
@@ -49,8 +41,7 @@ class myClient(discord.Client):
                     await ctx.channel.send(the_momma)
                 elif momma.content.lower() == ('no'):
                         await ctx.channel.send(':(')
-            elif 'Joke Bot' or 'joke bot' or 'Joke bot' or 'joke Bot' in ctx.content:
-                await ctx.channel.send('If you need any help just send "::help" in the chat!')
+        
          
            
             elif ctx.content.startswith('::help'):
@@ -61,8 +52,6 @@ class myClient(discord.Client):
                 await ctx.channel.send(embed=embed)
 
 
-    
-    
             elif ctx.content.startswith('::kk'):
                 await ctx.channel.send('Knock knock!')
                 res = await client.wait_for('message', check=lambda message: ctx.author == message.author)
@@ -78,7 +67,11 @@ class myClient(discord.Client):
 
                     answer = await client.wait_for('message', check=lambda message: ctx.author == message.author)
                     if answer.content.lower() == (f"{who} who?") or ("who?") or ("who"):
-                        await ctx.channel.send(joke[1])              
+                       await ctx.channel.send(joke[1])         
+
+
+            elif ctx.content.startswith(('Joke Bot', 'joke bot', 'Joke bot', 'joke Bot')):
+                await ctx.channel.send('If you need any help just send "::help" in the chat!')   
                     
 
 client = myClient()
