@@ -60,7 +60,7 @@ class myClient(discord.Client):
             elif ctx.content.startswith('::kk'):
                 await ctx.channel.send('Knock knock!')
                 res = await client.wait_for('message', check=lambda message: ctx.author == message.author)
-                if res.content.lower() == ("who's there?") or ("whos there") or ("whos there?") or ("who's there"):
+                if res.content.lower() in ["who's there?", "whos there", "whos there?", "who's there"]:
 
                    #avläser dokumentet anväder random.choice för hämta ett skämt som sedan delas i två genom split, skicka första delen.
                     with open("knockjokes.txt", "r", encoding="utf8") as f:
@@ -75,7 +75,7 @@ class myClient(discord.Client):
                        await ctx.channel.send(joke[1])         
 
             #Ett till extra hjälp för att påminna om hjälp lådan
-            elif ctx.content.startswith(('Joke Bot', 'joke bot', 'Joke bot', 'joke Bot')):
+            elif ctx.content.startswith(('Joke Bot', 'joke bot', 'Joke bot', 'joke Bot', 'Jokebot', 'JokeBot', 'jokebot')):
                 await ctx.channel.send('If you need any help just send "::help" in the chat!')   
                     
 
