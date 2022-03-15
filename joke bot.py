@@ -7,7 +7,7 @@ import random
 client = discord.Client()
 
 
-class myClient(discord.Client):
+class myClient(discord.Client): #https://discordpy.readthedocs.io/en/stable/api.html
     async def on_ready(self):
    #så man vet att den är inloggad
         print(f'Logged in as {client.user}'.format(client))
@@ -32,6 +32,7 @@ class myClient(discord.Client):
                     await ctx.channel.send(the_joke)
                 elif chuck.content.lower() == ('no'):
                         await ctx.channel.send(':(')
+                        
               #samma igen men med annan api och en annan command ::ym
             elif ctx.content.startswith('::ym'):
                 await ctx.channel.send('Yo momma joke?, Yes/No')
@@ -81,3 +82,6 @@ class myClient(discord.Client):
 
 client = myClient()
 client.run('OTM1MTM4MDU3MzI4NDI3MDM5.Ye6RLg.QK7Hx4Cjp1LAEjGeQwnKb2pe5vQ')
+
+
+
