@@ -85,5 +85,5 @@ class myClient(discord.Client): #https://discordpy.readthedocs.io/en/stable/api.
                 
 
 client = myClient()
-client.run('OTM1MTM4MDU3MzI4NDI3MDM5.Ye6RLg.QK7Hx4Cjp1LAEjGeQwnKb2pe5vQ')
+client.run('OTM1MTM4MDU3MzI4NDI3MDM5.GUWwnh.bmliZ4NBKw9rNn8WKtawzSA2h6dbCNvIou6tk4')
 
